@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Болотбек & Фатима - 50 Жаш Маараке</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Great+Vibes&family=Marck+Script&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <script src="tailwind.config.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-neutral-50 text-neutral-800 font-sans antialiased no-scroll selection:bg-gold-light">
+
+    <canvas id="particles-canvas"></canvas>
+    <button id="music-toggle" class="fixed top-5 right-5 z-40 bg-white/80 backdrop-blur-md border border-gold/40 text-gold-dark p-3 rounded-full shadow-lg hover:scale-105 transition-all duration-300 flex items-center justify-center w-12 h-12" aria-label="Toggle Music">
+        <i id="music-icon" class="fas fa-music text-lg"></i>
+    </button>
+
+    <audio id="bg-music" loop preload="auto">
+        <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=soft-piano-10243.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Кат -->
+    <div id="envelope-screen" class="fixed inset-0 z-50 flex items-center justify-center bg-white transition-opacity duration-1000 overflow-hidden">
+        
+        <div class="absolute inset-4 sm:inset-8 border border-gold/30 rounded-lg pointer-events-none"></div>
+        <div class="absolute inset-6 sm:inset-10 border-2 border-gold/60 rounded-lg pointer-events-none"></div>
+        <div class="envelope-top absolute inset-0 bg-neutral-100/90 border-b border-gold/30"></div>
+        <div class="envelope-bottom absolute inset-0 bg-neutral-100/90 border-t border-gold/30"></div>
+        <div class="envelope-left absolute inset-0 bg-neutral-50/80 border-r border-gold/20"></div>
+        <div class="envelope-right absolute inset-0 bg-neutral-50/80 border-l border-gold/20"></div>
+        <div class="relative z-10 text-center flex flex-col items-center px-4">
+            <div id="wax-seal" class="pulse-seal w-28 h-28 sm:w-36 sm:h-36 rounded-full gold-bg shadow-2xl flex items-center justify-center cursor-pointer transform hover:scale-105 transition-transform duration-300 border-4 border-yellow-100/60 relative group">
+                <div class="w-24 h-24 sm:w-32 sm:h-32 rounded-full border-2 border-dashed border-gold-deep/40 flex flex-col items-center justify-center text-amber-950 p-2">
+                    <span class="font-serif text-3xl sm:text-4xl font-bold tracking-wider gold-text">50</span>
+                    <span class="font-script text-xs sm:text-sm text-amber-900 tracking-widest mt-1">Маараке</span>
+                </div>
+            </div>
+
+            <p class="mt-8 font-serif text-gold-dark font-medium text-lg sm:text-xl tracking-widest uppercase animate-pulse">
+                Ачуу үчүн басыңыз
+            </p>
+            <p class="font-script text-neutral-500 text-lg sm:text-xl mt-1">
+                Болотбек & Фатима
+            </p>
+        </div>
+    </div>
+
+    <!-- 1 -->
+    <main id="main-content" class="relative z-10 max-w-2xl mx-auto px-4 py-8 sm:py-16 opacity-0 transition-opacity duration-1000">
+
+        <section class="text-center py-12 px-6 bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-gold/30 relative overflow-hidden mb-12 reveal-on-scroll">
+            <div class="ornate-corner ornate-tl"></div>
+            <div class="ornate-corner ornate-tr"></div>
+            <div class="ornate-corner ornate-bl"></div>
+            <div class="ornate-corner ornate-br"></div>
+
+            <span class="font-serif text-gold-dark tracking-widest text-sm uppercase block mb-3">Чакыруу каты</span>
+            
+            <h1 class="font-script text-6xl sm:text-7xl gold-text mb-4 leading-tight">
+                Чакыруу
+            </h1>
+
+            <div class="w-24 h-0.5 gold-bg mx-auto my-6"></div>
+
+            <p class="font-serif text-xl sm:text-2xl text-neutral-700 italic mb-2">
+                Сиздерди кадырлуу коногубуз катары
+            </p>
+            <p class="font-serif text-2xl sm:text-3xl font-bold text-amber-900 uppercase tracking-wide my-4">
+                50 ЖАШ МААРАКЕБИЗГЕ
+            </p>
+            <p class="font-serif text-xl sm:text-2xl text-neutral-700 italic">
+                чын журоктон чакырабыз!
+            </p>
+
+            <div class="mt-8 pt-6 border-t border-gold/20">
+                <p class="italic font-script text-4xl sm:text-5xl text-amber-800">
+                    Болотбек & Фатима
+                </p>
+            </div>
+        </section>
+
+        <section class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 sm:p-10 shadow-xl border border-gold/30 relative mb-12 reveal-on-scroll">
+            <div class="ornate-corner ornate-tl"></div>
+            <div class="ornate-corner ornate-tr"></div>
+            <div class="ornate-corner ornate-bl"></div>
+            <div class="ornate-corner ornate-br"></div>
+
+            <div class="text-center font-serif leading-relaxed text-neutral-700 space-y-6 text-base sm:text-lg">
+                <p class="font-bold text-xl sm:text-2xl text-amber-900 font-serif">
+                    Урматтуу туугандар, достор жана жакындарыбыз!
+                </p>
+                
+                <p>
+                    Сиздерди үй-бүлөбүз үчүн өзгөчө кубанычтуу күн - өмүрдүн жарым кылымдык белеси болгон <span class="font-semibold text-amber-800">50 жаш мааракебизди</span> бирге белгилөөгө чакырабыз!
+                </p>
+
+                <p>
+                    Өмүр жолубуздагы кубанычтуу күндөрүбүздү сиздер менен бөлүшүп, жакшылыктарыбызга бирге болуп келгенибизге кубанычтабыз. Сиздердей жакын адамдардын орду биздин жүрөгүбүздө ар дайым өзгөчө.
+                </p>
+
+                <p>
+                    Ак дасторконубуздун төрөнөн орун алып, ак баталарыңызды берип, кубанычыбызды тең бөлүшүп кетсеңиздер, биз үчүн чоң сыймык болмок.
+                </p>
+
+                <p class="italic text-amber-900 font-medium">
+                    Келиңиздер, жакшылыгыбызга өртөктөш болуп, бул өзгөчө күндү бирге шаңга бөлөп, жагымдуу эскерүүлөрдү жаратабыз!
+                </p>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            
+            <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-gold/30 text-center flex flex-col items-center justify-center reveal-on-scroll">
+                <div class="w-14 h-14 rounded-full gold-bg flex items-center justify-center text-white text-2xl shadow-md mb-4">
+                    <i class="far fa-calendar-alt"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold text-amber-900 mb-2">КҮНҮ ЖАНА УБАКТЫСЫ</h3>
+                <p class="font-serif text-2xl text-gold-dark font-bold">7-ноябрь, 2026</p>
+                <p class="font-sans text-neutral-600 mt-1">Саат: <span class="font-semibold text-neutral-800">16:00</span></p>
+            </div>
+
+            <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-gold/30 text-center flex flex-col items-center justify-center reveal-on-scroll">
+                <div class="w-14 h-14 rounded-full gold-bg flex items-center justify-center text-white text-2xl shadow-md mb-4">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold text-amber-900 mb-2">ӨТКӨРҮЛҮҮЧҮ ЖЕРИ</h3>
+                <p class="font-serif text-2xl text-gold-dark font-bold">«Алтын Казына»</p>
+                <p class="font-sans text-neutral-600 mt-1">рестораны</p>
+                <p class="font-sans text-sm text-neutral-500 mt-2">Дареги: проспект Победы, 351</p>
+            </div>
+        </section>
+
+        <section class="bg-gradient-to-r from-amber-900 via-yellow-950 to-amber-900 text-white rounded-2xl p-8 shadow-2xl border border-gold/50 text-center mb-12 reveal-on-scroll relative overflow-hidden">
+            <h3 class="font-serif text-2xl sm:text-3xl text-gold-light mb-6 tracking-wide">
+                Тойго чейин калды:
+            </h3>
+
+            <div class="grid grid-cols-4 gap-2 sm:gap-4 max-w-md mx-auto">
+                <div class="bg-white/10 backdrop-blur-md rounded-xl p-3 border border-gold/30">
+                    <span id="timer-days" class="font-serif text-2xl sm:text-4xl font-bold text-gold-light block">00</span>
+                    <span class="text-xs uppercase tracking-wider text-neutral-300">Күн</span>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md rounded-xl p-3 border border-gold/30">
+                    <span id="timer-hours" class="font-serif text-2xl sm:text-4xl font-bold text-gold-light block">00</span>
+                    <span class="text-xs uppercase tracking-wider text-neutral-300">Саат</span>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md rounded-xl p-3 border border-gold/30">
+                    <span id="timer-minutes" class="font-serif text-2xl sm:text-4xl font-bold text-gold-light block">00</span>
+                    <span class="text-xs uppercase tracking-wider text-neutral-300">Мүнөт</span>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md rounded-xl p-3 border border-gold/30">
+                    <span id="timer-seconds" class="font-serif text-2xl sm:text-4xl font-bold text-gold-light block">00</span>
+                    <span class="text-xs uppercase tracking-wider text-neutral-300">Секунд</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="text-center mb-12 reveal-on-scroll">
+            <h3 class="font-serif text-2xl font-bold text-amber-900 mb-4">Картадан көрүү</h3>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://go.2gis.com/MrQs7" target="_blank" class="inline-flex items-center justify-center px-6 py-3.5 rounded-xl gold-bg text-amber-950 font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 border border-yellow-200">
+                    <i class="fas fa-location-arrow mr-2"></i> 2GIS аркылуу ачуу
+                </a>
+                <a href="https://maps.app.goo.gl/1y4QY2U5heuSfoXg6" target="_blank" class="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-white text-neutral-800 font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 border border-gold/40">
+                    <i class="fab fa-google mr-2 text-red-500"></i> Google Карта
+                </a>
+            </div>
+        </section>
+
+        <section class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-xl border border-gold/30 mb-12 reveal-on-scroll">
+            <h3 class="font-serif text-2xl sm:text-3xl text-center text-amber-900 mb-6 font-bold">
+                Сүрөт галереясы
+            </h3>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="relative group overflow-hidden rounded-xl border-2 border-gold/30 shadow-md">
+                    <img src="IMG_7564.JPG" alt="Jubilee Moment 1" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-amber-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="relative group overflow-hidden rounded-xl border-2 border-gold/30 shadow-md">
+                    <img src="IMG_7565.JPG" alt="Jubilee Moment 2" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-amber-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="relative group overflow-hidden rounded-xl border-2 border-gold/30 shadow-md">
+                    <img src="IMG_7563.JPG" alt="Jubilee Moment 2" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-amber-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="relative group overflow-hidden rounded-xl border-2 border-gold/30 shadow-md">
+                    <img src="IMG_7570.JPG" alt="Jubilee Moment 2" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-amber-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+            </div>
+        </section>
+
+
+        <footer class="text-center py-8 border-t border-gold/30 reveal-on-scroll">
+            <p class="font-serif text-xl text-neutral-700 italic">
+                Урматтоо менен, маараке ээлери:
+            </p>
+            <p class="font-script text-4xl sm:text-5xl text-amber-900 my-2">
+                Болотбек & Фатима
+            </p>
+            <p class="font-serif text-lg text-gold-dark font-medium mt-4">
+                «Келиңиздер - биз үчүн чоң кубаныч!»
+            </p>
+        </footer>
+
+    </main>
+
+    <!-- External Custom JavaScript Interactions -->
+    <script src="script.js"></script>
+</body>
+</html>
